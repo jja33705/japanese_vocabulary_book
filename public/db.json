@@ -1,0 +1,14 @@
+{
+  "vocabularys": [
+    {
+      "title": "jang1",
+      "words": [
+        {
+            "korean": "하다",
+            "japanese": "する"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}
