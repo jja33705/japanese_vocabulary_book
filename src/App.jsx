@@ -11,7 +11,7 @@ const App = () => {
     <div className="App"> 
         <Nav />
         <Routes>
-            <Route index element={<VocabularyList />} />
+            <Route path="/" element={<VocabularyList />} />
             <Route path="/makeVocabulary" element={<MakeVocabulary />} />
             <Route path="/:vocabularyId" element={<Vocabulary />} />
             <Route path="/dictionary" element={<Dictionary />} />

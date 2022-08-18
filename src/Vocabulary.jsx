@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Vocabulary = () => {
     const params = useParams();
+    const navigate = useNavigate();
 
     const [vocabulary, setVocabulary] = useState({});
 
@@ -11,6 +12,13 @@ const Vocabulary = () => {
         setVocabulary(vocabulary);
     };
 
+    const onClickDeleteVocabularyButton = async () => {
+        await (await fetch(`http://localhost:3001/vocabularys/${params.vocabularyId}`, {
+            method: 'DELETE',
+        })).json();
+        navigate('/');
+    }
+
     useEffect(() => {
         getVocabulary();
     }, []);
@@ -18,6 +26,7 @@ const Vocabulary = () => {
     return (
         <div>
             <h3>{vocabulary.title}</h3>
+            <button onClick={onClickDeleteVocabularyButton}>삭제</button>
             <ul>
                 {vocabulary.words && vocabulary.words.map((word, index) => 
                     <li key={index}>{word.korean} {word.japanese}</li>

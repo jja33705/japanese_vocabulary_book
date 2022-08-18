@@ -34,6 +34,10 @@ const MakeVocabulary = () => {
         setJapanese('');
     };
 
+    const onClickDeleteWordButton = (index) => {
+        setWordList(wordList.filter((_, i) => i !== index));
+    };
+
     const onChangeTitleInput = (e) => {
         setTitle(e.target.value);
     };
@@ -65,7 +69,10 @@ const MakeVocabulary = () => {
             </form>
             <ul>
                 {wordList.map((word, index) => 
-                    <li key={index}>{word.korean} {word.japanese}</li>
+                    <div key={index}>
+                        <span>{word.korean} {word.japanese}</span>
+                        <button type="button" onClick={() => onClickDeleteWordButton(index)}>삭제</button>
+                    </div>
                 )}
             </ul>
         </div>

@@ -1,53 +1,23 @@
 {
   "vocabularys": [
     {
-      "title": "jang1",
-      "words": [
-        {
-          "korean": "하다",
-          "japanese": "する"
-        }
-      ],
+      "title": "jlkjl",
+      "words": [],
       "id": 1
     },
     {
-      "title": "jk",
+      "title": "jhgj",
       "words": [
         {
-          "korean": "kj",
-          "japanese": "jk"
+          "korean": "ghjgjh",
+          "japanese": "hgjjhg"
+        },
+        {
+          "korean": "ghjgjh",
+          "japanese": "ghjgjh"
         }
       ],
       "id": 2
-    },
-    {
-      "title": "asdfas",
-      "words": [],
-      "id": 3
-    },
-    {
-      "title": "saf",
-      "words": [
-        {
-          "korean": "sadf",
-          "japanese": "sadf"
-        },
-        {
-          "korean": "sadf",
-          "japanese": "asdf"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "title": "afs",
-      "words": [
-        {
-          "korean": "sdaf",
-          "japanese": "sadf"
-        }
-      ],
-      "id": 5
     }
   ]
 }
