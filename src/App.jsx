@@ -12,8 +12,8 @@ const App = () => {
         <Nav />
         <Routes>
             <Route index element={<VocabularyList />} />
-            <Route path=":vocabularyId" element={<Vocabulary />} />
-            <Route path="makeVocabulary" element={<MakeVocabulary />} />
+            <Route path="/makeVocabulary" element={<MakeVocabulary />} />
+            <Route path="/:vocabularyId" element={<Vocabulary />} />
             <Route path="/dictionary" element={<Dictionary />} />
         </Routes>
     </div>
