@@ -1,0 +1,23 @@
+.nav {
+    padding: 0 20px;
+    height: 50px;
+}
+
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.li {
+    display: inline;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+}

@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
+import styles from './Nav.module.css';
 
 const Nav = () => {
     return (
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">단어장</Link>
-                        <Link to="/dictionary">사전</Link>
-                    </li>
+        <>
+            <nav className={styles.nav}>
+                <ul className={styles.ul}>
+                    <li className={styles.li}><Link to="/" className={styles.link}>단어장</Link></li>
+                    <li><Link to="/dictionary" className={styles.link}>사전</Link></li>
                 </ul>
             </nav>
-        </div>
+        </>
     );
 };
 
