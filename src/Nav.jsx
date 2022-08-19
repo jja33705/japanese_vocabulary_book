@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from './Nav.module.css';
 
 const Nav = () => {
+    const isActive = true;
+
     return (
         <>
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
-                    <li className={styles.li}><Link to="/" className={styles.link}>단어장</Link></li>
-                    <li><Link to="/dictionary" className={styles.link}>사전</Link></li>
+                    <li className={`${styles.li}`}><NavLink to="/" className={styles.navLink}>단어장</NavLink></li>
+                    <li className={styles.li}><NavLink to="/dictionary" className={styles.navLink}>사전</NavLink></li>
                 </ul>
             </nav>
         </>

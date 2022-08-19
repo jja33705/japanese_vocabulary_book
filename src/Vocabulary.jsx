@@ -19,6 +19,10 @@ const Vocabulary = () => {
         navigate('/');
     }
 
+    const onClickEditVocabularyButton = () => {
+        navigate(`/editVocabulary/${params.vocabularyId}`);
+    };
+
     useEffect(() => {
         getVocabulary();
     }, []);
@@ -27,6 +31,7 @@ const Vocabulary = () => {
         <div>
             <h3>{vocabulary.title}</h3>
             <button onClick={onClickDeleteVocabularyButton}>삭제</button>
+            <button onClick={onClickEditVocabularyButton}>수정</button>
             <ul>
                 {vocabulary.words && vocabulary.words.map((word, index) => 
                     <li key={index}>{word.korean} {word.japanese}</li>

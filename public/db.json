@@ -1,11 +1,6 @@
 {
   "vocabularys": [
     {
-      "title": "jlkjl",
-      "words": [],
-      "id": 1
-    },
-    {
       "title": "jhgj",
       "words": [
         {
@@ -18,6 +13,24 @@
         }
       ],
       "id": 2
+    },
+    {
+      "title": "수정",
+      "words": [
+        {
+          "korean": "khjjkh",
+          "japanese": "hkjhkj"
+        },
+        {
+          "korean": "수정",
+          "japanese": "수정"
+        },
+        {
+          "korean": "수정2",
+          "japanese": "수정2"
+        }
+      ],
+      "id": 3
     }
   ]
 }

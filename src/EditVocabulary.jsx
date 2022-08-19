@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const MakeVocabulary = () => {
+const EditVocabulary = () => {
     const navigate = useNavigate();
+    const params = useParams();
     
     const [title, setTitle] = useState('');
     const [korean, setKorean] = useState('');
     const [japanese, setJapanese] = useState('');
     const [wordList, setWordList] = useState([]);
 
-    const onSubmitMakeVocabularyForm = async (e) => {
+    const getVocabulary = async () => {
+        const vocabulary = await (await fetch(`http://localhost:3001/vocabularys/${params.vocabularyId}`)).json();
+        setTitle(vocabulary.title);
+        setWordList(vocabulary.words);
+    };
+
+    const onSubmitEditVocabularyForm = async (e) => {
         e.preventDefault();
         
         const newVocabulary = {
@@ -17,8 +24,8 @@ const MakeVocabulary = () => {
             words: wordList,
         };
         
-        const submitMakeVocabularyFormResponse = await (await fetch('http://localhost:3001/vocabularys', {
-            method: 'POST',
+        const submitMakeVocabularyFormResponse = await (await fetch(`http://localhost:3001/vocabularys/${params.vocabularyId}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -50,10 +57,14 @@ const MakeVocabulary = () => {
         setJapanese(e.target.value);
     };
 
+    useEffect(() => {
+        getVocabulary();
+    }, []);
+
     return (
         <>
-            <h4>단어장 생성</h4>
-            <form onSubmit={onSubmitMakeVocabularyForm}>
+            <h4>단어장 수정</h4>
+            <form onSubmit={onSubmitEditVocabularyForm}>
                 <div>
                     <label htmlFor="title">제목</label>
                     <input type="text" id="title" value={title} onChange={onChangeTitleInput}></input>
@@ -65,7 +76,7 @@ const MakeVocabulary = () => {
                     <input type="text" id="japanese" value={japanese} onChange={onChangeJapaneseInput}></input>
                     <button type="button" onClick={onClickAddWordButton}>단어 추가</button>
                 </div>
-                <button type="submit">생성</button>
+                <button type="submit">수정</button>
             </form>
             <ul>
                 {wordList.map((word, index) => 
@@ -79,4 +90,4 @@ const MakeVocabulary = () => {
     );
 };
 
-export default MakeVocabulary;
+export default EditVocabulary;
